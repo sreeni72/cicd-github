@@ -34,8 +34,8 @@
       <classifier>mule-application</classifier>
       <cloudHubDeployment>
         <muleVersion>4.4.0</muleVersion>
-        <username>${env.PLATFORM_USERNAME}</username>
-        <password>${env.PLATFORM_PASSWORD}</password>
+        <username>muser13</username>
+        <password>Lakshmi@1</password>
         <applicationName>cicd-github</applicationName>
         <environment>Sandbox</environment>
         <workers>1</workers>
