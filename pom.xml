@@ -31,20 +31,22 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-      <classifier>mule-application</classifier>
-      <cloudHubDeployment>
-        <muleVersion>4.4.0</muleVersion>
-        <username>muser13</username>
-        <password>Lakshmi@1</password>
-        <applicationName>cicd-github</applicationName>
-        <environment>Sandbox</environment>
-        <workers>1</workers>
-        <workerType>MICRO</workerType>
-        <objectStoreV2>true</objectStoreV2>
-        <region>us-east-2</region>
-        <businessGroupId>${env.BUS_GROUP_ID}</businessGroupId>
-      </cloudHubDeployment>
-    </configuration>
+      					<classifier>mule-application</classifier>
+					<cloudHubDeployment>
+						<muleVersion>4.4.0</muleVersion>
+						<username>${env.PLATFORM_USERNAME}</username>
+						<password>${env.PLATFORM_PASSWORD}</password>
+						<applicationName>cicd-github</applicationName>
+						<environment>Dev</environment>
+						<workers>1</workers>
+						<workerType>MICRO</workerType>
+						<objectStoreV2>true</objectStoreV2>
+						<region>us-east-2</region>
+						<properties>
+							<http.port>8081</http.port>						
+						</properties>
+					</cloudHubDeployment>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -77,18 +79,6 @@
 			<url>https://repository.mulesoft.org/releases/</url>
 			<layout>default</layout>
 		</repository>
-		<repository>
-			<id>mule-enterprise</id>
-			<name>Mule Enterprise Repository</name>
-			<url>https://repository.mulesoft.org/nexus-ee/content/repositories/releases-ee/</url>
-			<layout>default</layout>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
 	</repositories>
 
 	<pluginRepositories>
@@ -100,31 +90,7 @@
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
-		</pluginRepository>
-		<pluginRepository>
-			<id>mule-enterprise</id>
-			<name>Mule Enterprise Repository</name>
-			<url>https://repository.mulesoft.org/nexus-ee/content/repositories/releases-ee/</url>
-			<layout>default</layout>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-		<pluginRepository>
-			<id>mule-public</id>
-			<name>Mule Public Repository</name>
-			<url>https://repository.mulesoft.org/nexus/content/repositories/public/</url>
-			<layout>default</layout>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
+		</pluginRepository>		
 	</pluginRepositories>
 	<distributionManagement>
 		<repository>
