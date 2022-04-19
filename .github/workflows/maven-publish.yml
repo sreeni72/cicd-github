@@ -68,5 +68,5 @@ jobs:
         name: artifacts
     
     - name: Deploy to Sandbox
-      run: mvn deploy -DmuleDeploy -DskipTests  --file pom.xml -s settings.xml  
+      run: mvn deploy -DmuleDeploy -DskipTests  --file pom.xml -s mvn-settings.xml  
     
