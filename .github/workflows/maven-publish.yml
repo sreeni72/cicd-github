@@ -18,7 +18,7 @@ jobs:
       - name: Publish to Exchange
         run: mvn deploy -s mvn-settings.xml
       - name: Deploy to Cloudhub
-        run: mvn deploy -DmuleDeploy -s settings.xml    
+        run: mvn deploy -DmuleDeploy -s mvn-settings.xml    
 #Pass in the secrets we need for deployment as environment variables
         env:
           NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
