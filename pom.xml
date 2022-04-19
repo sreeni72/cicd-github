@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>843708ab-4d59-4d50-ac75-94ecd6bd7be8</groupId>
+	<groupId>706a87d9-32b8-43da-9a9c-7208ea9f2160</groupId>
 	<artifactId>cicd-github</artifactId>
 	<version>1.0.1</version>
 	<packaging>mule-application</packaging>
