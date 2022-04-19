@@ -37,7 +37,7 @@
 						<username>${env.PLATFORM_USERNAME}</username>
 						<password>${env.PLATFORM_PASSWORD}</password>
 						<applicationName>cicd-github</applicationName>
-						<environment>Dev</environment>
+						<environment>dev</environment>
 						<workers>1</workers>
 						<workerType>MICRO</workerType>
 						<objectStoreV2>true</objectStoreV2>
