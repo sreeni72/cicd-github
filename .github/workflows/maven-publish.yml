@@ -10,6 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     env:
       PLATFORM_USERNAME: ${{ secrets.PLATFORM_USERNAME }}
       PLATFORM_PASSWORD: ${{ secrets.PLATFORM_PASSWORD }}      
@@ -50,6 +51,7 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     env:
       PLATFORM_USERNAME: ${{ secrets.PLATFORM_USERNAME }}
       PLATFORM_PASSWORD: ${{ secrets.PLATFORM_PASSWORD }}
