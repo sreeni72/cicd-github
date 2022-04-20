@@ -25,12 +25,22 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
         cache: maven
+        
+    - name: Add repo credentials
+      uses: s4u/maven-settings-action@v2.4.0
+      with:
+        servers: |
+          [{
+           "id": "MuleRepository",
+           "username": "${{ secrets.PLATFORM_USERNAME }}",
+           "password": "${{ secrets.PLATFORM_PASSWORD }}"
+          }]
     
     - name: Build with maven
-      run: mvn -B clean package -s mvn-settings.xml
+      run: mvn -B clean package --file pom.xml
     
     - name: Upload to Exchange
-      run: mvn deploy -s mvn-settings.xml
+      run: mvn deploy 
       
   deploy:
     needs: build
@@ -52,5 +62,5 @@ jobs:
           ${{ runner.os }}-maven-
           
     - name: Deploy to Sandbox
-      run: mvn deploy -DmuleDeploy -DskipTests  --file pom.xml -s mvn-settings.xml  
+      run: mvn deploy -DmuleDeploy -DskipTests  --file pom.xml 
     
