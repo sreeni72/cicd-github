@@ -2,20 +2,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>706a87d9-32b8-43da-9a9c-7208ea9f2160</groupId>
+	<groupId>c6114dbf7-39f6-4dd2-9bd4-1f49bbb83419</groupId>
 	<artifactId>cicd-github</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 
 	<name>cicd-github</name>
- 
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<app.runtime>4.4.0-20220321</app.runtime>
 		<mule.maven.plugin.version>3.5.4</mule.maven.plugin.version>
-		
 	</properties>
 
 	<build>
@@ -31,20 +30,18 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-      					<classifier>mule-application</classifier>
+					<classifier>mule-application</classifier>
 					<cloudHubDeployment>
 						<muleVersion>4.4.0</muleVersion>
-						<username>${env.PLATFORM_USERNAME}</username>
-						<password>${env.PLATFORM_PASSWORD}</password>
+						<username>muser14</username>
+						<password>Lakshmi@1</password>
 						<applicationName>cicd-github</applicationName>
-						<environment>dev</environment>
+						<environment>Sandbox</environment>
 						<workers>1</workers>
 						<workerType>MICRO</workerType>
 						<objectStoreV2>true</objectStoreV2>
 						<region>us-east-2</region>
-						<properties>
-							<http.port>8081</http.port>						
-						</properties>
+						<businessGroupId>${env.BUS_GROUP_ID}</businessGroupId>
 					</cloudHubDeployment>
 				</configuration>
 			</plugin>
@@ -90,7 +87,7 @@
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
-		</pluginRepository>		
+		</pluginRepository>
 	</pluginRepositories>
 	<distributionManagement>
 		<repository>
@@ -101,4 +98,5 @@
 			<layout>default</layout>
 		</repository>
 	</distributionManagement>
+
 </project>

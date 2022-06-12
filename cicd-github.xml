@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:json-logger="http://www.mulesoft.org/schema/mule/json-logger" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/json-logger http://www.mulesoft.org/schema/mule/json-logger/current/mule-json-logger.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="e435c342-a59a-402c-8181-8921a8711f5f" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<json-logger:config name="JSON_Logger_Config" doc:name="JSON Logger Config" doc:id="f2f2d261-564b-45d0-b46a-8325cf5a627b" applicationName="test1" applicationVersion="1.0.0" environment="dev" />
+	<flow name="cicd-githubFlow" doc:id="b34465c1-63e3-4bac-ad08-f1f6ed862749" >
+		<http:listener doc:name="Listener" doc:id="834415ba-19dd-42b2-97ea-52d766ba317b" config-ref="HTTP_Listener_config" path="/test1"/>
+		<json-logger:logger doc:name="Logger" doc:id="a345e7c3-7a3f-4d4b-9ff9-eeca992f5ac6" config-ref="JSON_Logger_Config" message="test1"/>
+	</flow>
+</mule>
