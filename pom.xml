@@ -41,7 +41,7 @@
 						<workerType>MICRO</workerType>
 						<objectStoreV2>true</objectStoreV2>
 						<region>us-east-2</region>
-						<businessGroupId>${env.BUS_GROUP_ID}</businessGroupId>
+						<!-- <businessGroupId>${env.BUS_GROUP_ID}</businessGroupId> -->
 					</cloudHubDeployment>
 				</configuration>
 			</plugin>
