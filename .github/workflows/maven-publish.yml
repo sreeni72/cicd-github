@@ -40,6 +40,11 @@ jobs:
            "id": "MuleRepository",
            "username": "${{ secrets.PLATFORM_USERNAME }}",
            "password": "${{ secrets.PLATFORM_PASSWORD }}"
+          },
+          {
+           "id": "anypoint-exchange-v3",
+           "username": "muser15",
+           "password": "${{ secrets.PLATFORM_PASSWORD }}"
           }]
     
     - name: Build with maven
